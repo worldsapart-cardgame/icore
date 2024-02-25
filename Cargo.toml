@@ -1,0 +1,59 @@
+[package]
+name = "wac-icore"
+version = "0.1.0"
+edition = "2021"
+authors = ["JieningYu <jiening.yu@outlook.com>"]
+description = "WorldsApart Cardgame's core logic implementaion"
+repository = "https://github.com/worldsapart-cardgame/icore/"
+license = "GPL-3.0-or-later"
+categories = []
+
+[badges]
+maintenance = { status = "actively-developed" }
+
+[workspace]
+resolver = "2"
+
+[workspace.lints.rust]
+unsafe_code = "deny"
+missing-docs = "warn"
+missing-debug-implementations = "deny"
+let-underscore-drop = "warn"
+single-use-lifetimes = "warn"
+trivial-numeric-casts = "warn"
+elided-lifetimes-in-paths = "deny"
+unused-lifetimes = "forbid"
+unused-macro-rules = "warn"
+unused-qualifications = "warn"
+unused-tuple-struct-fields = "warn"
+variant-size-differences = "warn"
+dyn-drop = "forbid"
+ellipsis-inclusive-range-patterns = "forbid"
+exported-private-dependencies = "forbid"
+uncommon-codepoints = "deny"
+
+[workspace.lints.clippy]
+missing-panics-doc = "warn"
+missing-errors-doc = "warn"
+cloned-instead-of-copied = "warn"
+future-not-send = "warn"
+if-not-else = "warn"
+if-then-some-else-none = "warn"
+impl-trait-in-params = "warn"
+macro-use-imports = "forbid"
+exhaustive-enums = "warn"
+str-to-string = "warn"
+use-debug = "warn"
+iter-without-into-iter = "warn"
+decimal-literal-representation = "warn"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"], optional = true }
+rand = "0.8"
+
+[features]
+default = ["serde"]
+serde = ["dep:serde"]
+
+[lints]
+workspace = true
