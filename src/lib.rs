@@ -1,7 +1,12 @@
+#![no_std]
+
 //! # wac-icore
 //!
 //! This is the core library for the server implementations of the game.
 
+extern crate alloc;
+
+use alloc::vec::Vec;
 use card::{HealthModifier, Judge};
 use rand::{
     distributions::{Distribution as RandDist, Standard as RandStd},

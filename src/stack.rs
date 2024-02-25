@@ -1,7 +1,6 @@
 //! Card stack related types.
 
-use std::collections::VecDeque;
-
+use alloc::collections::VecDeque;
 use rand::Rng;
 
 /// A stack of items.
@@ -96,7 +95,7 @@ impl<T> Stack<T> {
 /// An iterator for the stack.
 #[derive(Debug, Clone)]
 pub struct Iter<'a, T> {
-    inner: std::collections::vec_deque::Iter<'a, T>,
+    inner: alloc::collections::vec_deque::Iter<'a, T>,
 }
 
 impl<'a, T> Iterator for Iter<'a, T> {
